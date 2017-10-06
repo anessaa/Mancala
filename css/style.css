@@ -30,7 +30,11 @@ body {
     
 	/* width and height can be anything, as long as they're equal */
 }
-
+.sideSeperator {
+    width: 132px;
+    display: inline-block;
+    position: relative;
+}
 .bucket {
     /* border: 2px; */
     background-color: palevioletred;

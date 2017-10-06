@@ -21,15 +21,18 @@ $(".instructions").on('click', function() {
     console.log('instruction button clicked')
 
 })
-
-
-// $("button.instructions").on('click', function() {
-//     console.log('info button clicked')
-
-// })
-
+$(".gameBoard").on('click', 'div.hole', function() {
+    console.log('game board clicked')
+    // $('.holes').data('#id')
+    var idx = this.id
+    console.log(idx)
+})
 /*----- functions -----*/
-function handleClick(evt) {
+
+function freeTurn() {
+
+}
+function capture() {
 
 }
 
@@ -53,6 +56,7 @@ function init() {
         }, 
         4, 4, 4, 4, 4, 4,
     ]
+    $('.hole').text('4');
 }
 
 init()

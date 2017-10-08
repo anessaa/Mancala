@@ -5,18 +5,14 @@ $(document).ready(function() {
 var board
 // players objects
 var winner;
-var state;
-var player1
-var player2
-var idx
-var holeClicked
+var player1Score
+var player2Score
 var playerOneTurn = true
 /*----- cached element references -----*/
 var holes
 // var $resetButton = $(".resetButton")
 // var $infoButton = $(".instructions")
 /*----- event listeners -----*/
-// holes and buckets clicked
 $(".resetButton").on('click', function() {
     console.log('reset button clicked')
 
@@ -26,14 +22,17 @@ $(".instructions").on('click', function() {
 
 })
 $(".gameBoard").on('click', 'div.hole', function() {
-    idx = this.id
+    var idx = this.id
+    idx = parseInt(idx)
     console.log("hole " + idx + " on board")
-    spreadStones()
+    spreadStones(idx)
+    render() 
     
 })
 /*----- functions -----*/
-function spreadStones() {
-    console.log("spread stones function called")  
+function spreadStones(idx) {
+    console.log("spread stones function called")
+    //console.log(idx)  
     var numStones = board[idx]
     board[idx] = 0
     // console.log(idx)
@@ -52,12 +51,9 @@ function spreadStones() {
     //     console.log("checking if statement")
     //     checkWin()
     // }
-    render() 
-    console.log(numStones + " number of stones")
+    //console.log(numStones + " number of stones")
     console.log(board)
-    
-    return numStones
-    
+    return numStones;
 }
 
 function freeTurn() {

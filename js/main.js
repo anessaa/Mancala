@@ -10,7 +10,6 @@ $(document).ready(function() {
 
 /*----- app's state (variables) -----*/
 var board;
-// players objects
 var playerOneTurn;
 var freeTurn;
 /*----- cached element references -----*/
@@ -24,7 +23,6 @@ $(".resetButton").on('click', function() {
 $(".instructions").on('click', function() {
    console.log("instructions button clicked")
 });
-
 
 $("div.hole").on('click', function() {
     var idx = this.id;
@@ -51,16 +49,16 @@ function spreadStones(idx) {
     }
 
     //capture
-    if (playerOneTurn && board[nextHole + bucketOffSet] === 1) {
-        board[7] = board[nextHole] + board[14 - nextHole];
-        board[nextHole] = 0;
-        board[14 - nextHole] = 0;
-    } else if (!playerOneTurn && board[nextHole + bucketOffSet] === 1) {
-        board[0] = board[nextHole] + board[14 - nextHole];
-        board[nextHole] = 0;
-        board[14 - nextHole] = 0;
+    var lastHoleIdx = nextHole + bucketOffSet;
+    var oppIdx = 14 - lastHoleIdx;
+    var minHoleIdx = playerOneTurn ? 1 : 8;
+    var maxHoleIdx = playerOneTurn ? 6 : 13;
+    if ((lastHoleIdx >= minHoleIdx && lastHoleIdx <= maxHoleIdx && board[lastHoleIdx] === 1) && board[oppIdx]) {
+        console.log('in if')
+        var numStones = board[oppIdx] + board[lastHoleIdx];
+        board[oppIdx] = board[lastHoleIdx] = 0;
+        board[playerOneTurn ? 7 : 0] += numStones;
     }
-
     var bucketIdx = playerOneTurn ? 7 : 0;
 
     // return if freeTurn
@@ -112,9 +110,9 @@ function render() {
 function init() {
     board = [
         0, 
-        4, 4, 4, 4, 4, 4, 
+        4, 4, 4, 10, 4, 4, 
         0, 
-        4, 4, 4, 4, 4, 4
+        4, 4, 1, 0, 4, 4
     ];
     playerOneTurn = true;
     winner = null;

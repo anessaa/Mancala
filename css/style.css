@@ -23,6 +23,7 @@ body {
     position: relative;
     cursor: pointer;
     text-align: center;
+    font-size: 30px;
 }
 .topSeperator.active, .bottomSeperator.active {
     pointer-events: none;
@@ -40,6 +41,7 @@ body {
     text-align: center;
     display: inline-block;
     left: 33px;
+    font-size: 50px; 
     border-radius: 20px;
 }
 .bucket2  {
@@ -48,7 +50,7 @@ body {
     height: 300px;
     margin: 0 auto;
     position: absolute;
-   
+   font-size: 50px;
     text-align: center;
     display: inline-block;
     right: 33px;

@@ -5,7 +5,7 @@ $(document).ready(function() {
 var board;
 // players objects
 var playerOneTurn;
-
+var freeTurn;
 
 /*----- cached element references -----*/
 var $holes = $('.hole, .bucket1, .bucket2');
@@ -22,12 +22,14 @@ $(".instructions").on('click', function() {
 });
 
 $("div.hole").on('click', function() {
-    var idx = this.id
-    idx = parseInt(idx)
-    spreadStones(idx)
-    playerOneTurn = !playerOneTurn;
+    var idx = this.id;
+    idx = parseInt(idx);
+    freeTurn = spreadStones(idx);
+    if (!freeTurn) playerOneTurn = !playerOneTurn;    
+    
     winner = checkWin();
     render();
+    
 })
 
 /*----- functions -----*/
@@ -37,15 +39,17 @@ function spreadStones(idx) {
     board[idx] = 0;
     var bucketOffSet = 0;
     console.log(idx)
+    
     for (var offset = 1; offset <= numStones; offset++) { 
+
         var nextHole = idx + offset;
         if (nextHole >= 14) nextHole = nextHole - 14;
         if((playerOneTurn && nextHole === 0) || (!playerOneTurn && nextHole === 7)) bucketOffSet++;
-
         board[nextHole + bucketOffSet]++;
-
     }
-    return numStones;
+    var bucketIdx = playerOneTurn ? 7 : 0;
+    // return if freeTurn
+    return ((nextHole + bucketOffSet) === bucketIdx);
 }
 
 function checkWin() {
@@ -67,9 +71,11 @@ function checkWin() {
 function render() {
     if (winner) {
         $('.status').html(`Winner is ${winner}`)
+    } else if (freeTurn) {
+        $('.status').html(`Free Turn. Player ${playerOneTurn ? 'one' : 'two'} goes again.`);
     } else {
         $('.status').html(`Next player is ${(playerOneTurn ? 'Player 1' : 'Player 2')}`)
-        }
+    }
         
     if (playerOneTurn) {
         $('.topSeperator').addClass('active')
@@ -78,28 +84,28 @@ function render() {
         $('.topSeperator').removeClass('active')
         $('.bottomSeperator').addClass('active')
     }
+    
     $(".player1").html(`Player 1: ${board[7]}`)
     $(".player2").html(`Player 2: ${board[0]}`)
     $holes.each(function() {
         var idx = this.id;
         $(this).html(board[idx]);
-        });
-    }
+    });
+}
 
 function init() {
     board = [
         0, 
-        4, 4, 4, 4, 4, 10, 
+        4, 4, 4, 4, 4, 4, 
         0, 
-        4, 4, 4, 4, 4, 10
+        4, 4, 4, 4, 4, 4
     ];
     playerOneTurn = true;
     winner = null;
-    $('.status').html("Player one starts!")
+    $('.status').html("Player one starts!")    
 }
 
 init();
 render();
-
 });
 

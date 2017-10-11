@@ -1,7 +1,4 @@
-/* .container {
-    display: inline-block;
-    width: 960px;
-} */
+
 body {
     font-family: 'Cinzel', serif;
     
@@ -18,63 +15,97 @@ body {
 }
 .hole {
 	border-radius: 50%;
-    width: 131px;
-    height: 115px;
+    width: 120px;
+    height: 120px;
     background-color: peachpuff; 
     display: inline-block;
     margin-top: 0 auto;
     position: relative;
-   
-    top: 40px;
-    left: 71px;
-    
-	/* width and height can be anything, as long as they're equal */
+    cursor: pointer;
+    text-align: center;
 }
-.sideSeperator {
-    width: 132px;
-    display: inline-block;
-    position: relative;
+.topSeperator.active, .bottomSeperator.active {
+    pointer-events: none;
 }
-.bucket {
-    /* border: 2px; */
+
+
+
+.bucket1  {
     background-color: palevioletred;
-    width: 300px;
-    height: 50px;
+    width: 75px;
+    height: 300px;
     margin: 0 auto;
-    position: relative;
-    top: 40px;
+    position: absolute;
+    top: 52px;
     text-align: center;
     display: inline-block;
-    left: 55px;
+    left: 33px;
+    border-radius: 20px;
+}
+.bucket2  {
+    background-color: palevioletred;
+    width: 75px;
+    height: 300px;
+    margin: 0 auto;
+    position: absolute;
+   
+    text-align: center;
+    display: inline-block;
+    right: 33px;
+    top: 52px;
     border-radius: 20px;
 }
 
+.topSeperator {
+    height: 145px;
+    width: 750px;
+    display: inline-block;
+    position: absolute;
+    bottom: 180px;
+    left: 133px;
+    margin: 0 auto;
+}
+.bottomSeperator {
+    height: 145px;
+    width: 750px;
+    display: inline-block;
+    position: absolute;
+    bottom: 42px;
+    left: 129px;
+    margin: 5px;
+}
 
 .gameBoard {
-    height: 900px;
-    width: 400px;
+    height: 400px;
+    width: 1000px;
     border: 5px solid black;
     margin: 0 auto;
     position: relative;
     bottom: 205px;
     background-color: burlywood;
     border-radius: 20px;
-    /* display: inline-block; */
 }
 h1 {
     text-align: center;
     font-size: 50px;
 }
-
 h2 {
+    position: relative;
+    left: 25px;
+}
+
+h3  {
     position: relative;
     left: 25px;
     display: inline-block;
     
 }
+
+
  button {
     position: relative;
-    left: 25px;
+    right: 25px;
+    top: 350px;
     width: 120px;
     font-size: 15px;
     padding: 10px;
@@ -90,9 +121,17 @@ h2 {
  .info {
      width: 400px;
      height: 250px;
-     /* margin: 0 auto; */
+     margin: 0 auto;
      position: relative;
-     left: 50px;
+     left: 684px;
+     top: 505px;
      border: 2px solid black;
      display: inline-block;
  }
+ p{
+    position:absolute;
+    top: 37%;
+    width:100%;
+    transform:translate(0, -50%);
+    text-align:center;
+  }

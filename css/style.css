@@ -1,10 +1,12 @@
 
 body {
     font-family: 'Cinzel', serif;
-    
+    background-image: url(http://clipartix.com/wp-content/uploads/2016/12/Free-background-clipart-photos-clip-art-backgrounds.jpg)
 }
 .container {
-    margin: auto 0;
+    width: 2000px;
+    height: 1000px;
+    margin: 0 auto;
 }
 .players {
     width: 300px;
@@ -14,26 +16,32 @@ body {
     left: 160px;
 }
 .hole {
-	border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    border-radius: 50%;
+    border: .5px solid black;    
+    width: 128px;
+    height: 139px;
     background-color: peachpuff; 
     display: inline-block;
-    margin-top: 0 auto;
     position: relative;
     cursor: pointer;
+    margin: 5px;
     text-align: center;
     font-size: 30px;
+
+}
+.howToPlay {
+    width: 500px;
+    height: 300px;
+    background-color: black;
 }
 .topSeperator.active, .bottomSeperator.active {
     pointer-events: none;
 }
 
-
-
 .bucket1  {
     background-color: palevioletred;
-    width: 75px;
+    border: 2px solid black;
+    width: 110px;
     height: 300px;
     margin: 0 auto;
     position: absolute;
@@ -46,7 +54,8 @@ body {
 }
 .bucket2  {
     background-color: palevioletred;
-    width: 75px;
+    border: 2px solid black;    
+    width: 110px;
     height: 300px;
     margin: 0 auto;
     position: absolute;
@@ -57,57 +66,59 @@ body {
     top: 52px;
     border-radius: 20px;
 }
-
 .topSeperator {
-    height: 145px;
-    width: 750px;
+    height: 169px;
+    width: 855px;
     display: inline-block;
     position: absolute;
     bottom: 180px;
-    left: 133px;
-    margin: 0 auto;
+    right: 162px;
 }
 .bottomSeperator {
-    height: 145px;
-    width: 750px;
+    height: 169px;
+    width: 855px;
     display: inline-block;
     position: absolute;
-    bottom: 42px;
-    left: 129px;
-    margin: 5px;
+    bottom: 34px;
+    left: 162px;    
 }
-
 .gameBoard {
-    height: 400px;
-    width: 1000px;
+    height: 409px;
+    width: 1181px;
     border: 5px solid black;
     margin: 0 auto;
     position: relative;
     bottom: 205px;
+    top: 190px;
     background-color: burlywood;
     border-radius: 20px;
+    right: 161px;
 }
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 9em;
+    display: inline-block;
+    margin: auto 0;
+    position: relative;
+    top: 115px;
+    left: 674px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
 }
 h2 {
     position: relative;
     left: 25px;
+    font-size: 1.4em;
 }
-
 h3  {
     position: relative;
     left: 25px;
-    display: inline-block;
-    
+    font-size: 1.3em;
+    display: inline-block;    
 }
-
-
  button {
-    position: relative;
-    right: 25px;
-    top: 350px;
+    top: 705px;
+    right: 43px;
     width: 120px;
     font-size: 15px;
     padding: 10px;
@@ -116,24 +127,19 @@ h3  {
     color: black;
     margin: 0 auto;
     margin-top: 20px;
-    
-
-    /* display: inline-block; */
+    border: 1.5px solid black;
+    cursor: pointer;    
+    position: relative;
  }
  .info {
-     width: 400px;
-     height: 250px;
-     margin: 0 auto;
-     position: relative;
-     left: 684px;
-     top: 505px;
-     border: 2px solid black;
-     display: inline-block;
- }
- p{
-    position:absolute;
-    top: 37%;
-    width:100%;
-    transform:translate(0, -50%);
-    text-align:center;
-  }
+    top: 78px;
+    width: 400px;
+    height: 250px;
+    left: 261px;
+    color: green;
+    border: 3.5px solid black;
+    display: inline-block;
+    position: absolute;
+    background-color: white;
+    border-radius: 7px;
+}

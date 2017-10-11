@@ -1,16 +1,20 @@
 $(document).ready(function() {
 /*----- constants -----*/
+// var stoneImgs = [
+//     '',
+//     "img/pebble1.png",
+//     null,
+//     "img/pebble1",
+//     "https://i.pinimg.com/originals/4d/1f/c7/4d1fc7896d3da8fe409bbc480bce3a5c.jpg"
+// ];
 
 /*----- app's state (variables) -----*/
 var board;
 // players objects
 var playerOneTurn;
 var freeTurn;
-
 /*----- cached element references -----*/
 var $holes = $('.hole, .bucket1, .bucket2');
-console.log($holes.length)
-
 /*----- event listeners -----*/
 $(".resetButton").on('click', function() {
     init();
@@ -18,18 +22,18 @@ $(".resetButton").on('click', function() {
 });
 
 $(".instructions").on('click', function() {
-    console.log('instruction button clicked')
+   console.log("instructions button clicked")
 });
+
 
 $("div.hole").on('click', function() {
     var idx = this.id;
     idx = parseInt(idx);
+    if (!board[idx]) return;
     freeTurn = spreadStones(idx);
     if (!freeTurn) playerOneTurn = !playerOneTurn;    
-    
     winner = checkWin();
     render();
-    
 })
 
 /*----- functions -----*/
@@ -38,16 +42,27 @@ function spreadStones(idx) {
     var numStones = board[idx];
     board[idx] = 0;
     var bucketOffSet = 0;
-    console.log(idx)
     
     for (var offset = 1; offset <= numStones; offset++) { 
-
         var nextHole = idx + offset;
         if (nextHole >= 14) nextHole = nextHole - 14;
         if((playerOneTurn && nextHole === 0) || (!playerOneTurn && nextHole === 7)) bucketOffSet++;
         board[nextHole + bucketOffSet]++;
     }
+
+    //capture
+    if (playerOneTurn && board[nextHole + bucketOffSet] === 1) {
+        board[7] = board[nextHole] + board[14 - nextHole];
+        board[nextHole] = 0;
+        board[14 - nextHole] = 0;
+    } else if (!playerOneTurn && board[nextHole + bucketOffSet] === 1) {
+        board[0] = board[nextHole] + board[14 - nextHole];
+        board[nextHole] = 0;
+        board[14 - nextHole] = 0;
+    }
+
     var bucketIdx = playerOneTurn ? 7 : 0;
+
     // return if freeTurn
     return ((nextHole + bucketOffSet) === bucketIdx);
 }
@@ -89,6 +104,7 @@ function render() {
     $(".player2").html(`Player 2: ${board[0]}`)
     $holes.each(function() {
         var idx = this.id;
+        // $(this).html(`<img src="${stoneImgs[board[idx]]}" width="50">`);
         $(this).html(board[idx]);
     });
 }

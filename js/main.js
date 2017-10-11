@@ -110,9 +110,9 @@ function render() {
 function init() {
     board = [
         0, 
-        4, 4, 4, 10, 4, 4, 
+        4, 4, 4, 4, 4, 4, 
         0, 
-        4, 4, 1, 0, 4, 4
+        4, 4, 4, 4, 4, 4
     ];
     playerOneTurn = true;
     winner = null;

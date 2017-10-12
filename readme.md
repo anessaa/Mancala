@@ -18,8 +18,6 @@ Winner - Count all the pieces in each store. The winner is the player with the m
 
 
 
-
-
 Populate the board with 4 stones in each hole.
 
 Create player 1 and player 2.
@@ -38,8 +36,4 @@ The player can capture stones if the last piece dropped in was in an empty hole.
 
 The game ends when all six spaces on the board are cleared. the player who still has pieces on his side of the board when game ends gets all of those pieces.
 
-variables:
-playerOne
-playerTwo
-turn 
-stonesInHoles
+

@@ -94,6 +94,26 @@ function spreadStones(idx) {
         board[playerOneTurn ? 7 : 0] += numStones;
     }
     var bucketIdx = playerOneTurn ? 7 : 0;
+    
+    //one side of board empty? remaining stones deposited in opposite sides bucket
+    var remainingPebbles = 0;
+    if (board[1] === 0 && board[2] === 0 && board[3] === 0 && board[4] === 0 && board[5] === 0 && board[6] === 0) {
+        for (var i = 8; i <= board.length-1; i++) {
+            console.log(i) 
+            remainingPebbles += board[i];
+            board[i] = 0;
+        }
+        board[0] += remainingPebbles;
+        remainingPebbles = 0;
+    } else if (board[8] === 0 && board[9] === 0 && board[10] === 0 && board[11] === 0 && board[12] === 0 && board[13] === 0) {
+        for (var j = 1; j < board.length - 7; j++) {
+            remainingPebbles += board[j];
+            board[j] = 0;
+        }
+        board[7] += remainingPebbles;
+        console.log(remainingPebbles)
+        remainingPebbles = 0;
+    }
 
     // return if freeTurn
     return ((nextHole + bucketOffSet) === bucketIdx);
@@ -146,12 +166,13 @@ function render() {
 function init() {
     board = [
         0, 
-        4, 4, 4, 4, 4, 4, 
+        4, 4, 4, 4, 4, 4,
         0, 
-        4, 4, 4, 4, 4, 4
+        4, 4, 4, 4, 4, 4, 
     ];
     playerOneTurn = true;
     winner = null;
+    
 }
 
 init();

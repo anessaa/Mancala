@@ -20,7 +20,7 @@ body {
     border: .5px solid black;    
     width: 128px;
     height: 139px;
-    background-color: peachpuff; 
+    background-color: #ffbf80; 
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -29,17 +29,15 @@ body {
     font-size: 30px;
 
 }
-.howToPlay {
-    width: 500px;
-    height: 300px;
-    background-color: black;
+.bucket1, .bucket2 img {
+    top: 17px;
 }
 .topSeperator.active, .bottomSeperator.active {
     pointer-events: none;
 }
 
 .bucket1  {
-    background-color: palevioletred;
+    background-color: #ffbf80;
     border: 2px solid black;
     width: 110px;
     height: 300px;
@@ -53,7 +51,7 @@ body {
     border-radius: 20px;
 }
 .bucket2  {
-    background-color: palevioletred;
+    background-color: #ffbf80;
     border: 2px solid black;    
     width: 110px;
     height: 300px;
@@ -82,6 +80,10 @@ body {
     bottom: 34px;
     left: 162px;    
 }
+img {
+    position: absolute;
+    left: 10px;
+}
 .gameBoard {
     height: 409px;
     width: 1181px;
@@ -90,7 +92,7 @@ body {
     position: relative;
     bottom: 205px;
     top: 190px;
-    background-color: burlywood;
+    background-color:#cc6600;
     border-radius: 20px;
     right: 161px;
 }
@@ -107,14 +109,16 @@ h1 {
 }
 h2 {
     position: relative;
-    left: 25px;
-    font-size: 1.4em;
+    left: 35px;
+    font-size: 43px;
+    bottom: 13px;
 }
 h3  {
     position: relative;
-    left: 25px;
-    font-size: 1.3em;
+    left: 35px;
+    font-size: 23px;
     display: inline-block;    
+    bottom: 60px
 }
  button {
     top: 705px;
@@ -132,14 +136,43 @@ h3  {
     position: relative;
  }
  .info {
-    top: 78px;
+    top: 60px;
     width: 400px;
-    height: 250px;
-    left: 261px;
+    height: 269px;
+    left: 251px;
     color: green;
     border: 3.5px solid black;
     display: inline-block;
     position: absolute;
     background-color: white;
     border-radius: 7px;
+    padding: 5px;
+}
+.hidden {
+    top: 60px;
+    width: 400px;
+    height: 269px;
+    left: 251px;
+    color: green;
+    border: 3.5px solid black;
+    display: inline-block;
+    position: absolute;
+    background-color: white;
+    border-radius: 7px; 
+    padding: 5px;
+    
+}
+.hidden ul {
+    position: relative;
+    bottom: 72px;
+    right: 10px;
+    
+    
+}
+.hidden h3 {
+    position: relative;
+    bottom: 34px;
+    left: 130px;
+    font-size: 25px;
+    padding-top: 10px;
 }

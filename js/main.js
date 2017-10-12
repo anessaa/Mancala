@@ -129,7 +129,7 @@ function checkWin() {
             return "Player 1 wins!";
         } else if (player2Score > player1Score) {
             return "Player 2 wins!";
-        } else {
+        } else if (player1Score === player2Score) {
             return "Tie!";
         }
     }
@@ -166,9 +166,9 @@ function render() {
 function init() {
     board = [
         0, 
-        4, 4, 4, 4, 4, 4,
+        0, 0, 0, 0, 0, 1,
         0, 
-        4, 4, 4, 4, 4, 4, 
+        0, 0, 0, 0, 0, 1, 
     ];
     playerOneTurn = true;
     winner = null;

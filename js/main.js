@@ -166,9 +166,9 @@ function render() {
 function init() {
     board = [
         0, 
-        0, 0, 0, 0, 0, 1,
+        4, 4, 4, 4, 4, 4,
         0, 
-        0, 0, 0, 0, 0, 1, 
+        4, 4, 4, 4, 4, 4, 
     ];
     playerOneTurn = true;
     winner = null;

@@ -1,6 +1,6 @@
-#MANCALA
+# MANCALA
 
-##Technologies used:
+## Technologies used:
     HTML/CSS/Javascript/Jquery
 
 Visit [Mancala][(https://anessaa.github.io/Mancala/)

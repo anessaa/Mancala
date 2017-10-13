@@ -70,6 +70,14 @@ $("div.hole").on('click', function() {
     render();
 })
 
+$(".demoButton").on('click', function() {
+    board = [
+        0, 0, 2, 0, 0, 2, 1,
+        0, 0, 0, 5, 0, 2, 0
+    ];
+    render();
+})
+
 /*----- functions -----*/
 function spreadStones(idx) {
     idx = parseInt(idx);
@@ -165,10 +173,8 @@ function render() {
 
 function init() {
     board = [
-        0, 
-        4, 4, 4, 4, 4, 4,
-        0, 
-        4, 4, 4, 4, 4, 4, 
+        0, 4, 4, 4, 4, 4, 4,
+        0, 4, 4, 4, 4, 4, 4
     ];
     playerOneTurn = true;
     winner = null;

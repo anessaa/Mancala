@@ -3,13 +3,11 @@ body {
     font-family: 'Cinzel', serif;
     background-image: url(http://clipartix.com/wp-content/uploads/2016/12/Free-background-clipart-photos-clip-art-backgrounds.jpg)
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+@media (max-width: 550px) and (orientation: landscape) {
     .container {
-        width: 25%;
+        width: 50%;
+        zoom: 100%        
+    }
 }
 .container {
     width: 2000px;

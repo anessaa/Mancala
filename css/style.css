@@ -3,10 +3,13 @@ body {
     font-family: 'Cinzel', serif;
     background-image: url(http://clipartix.com/wp-content/uploads/2016/12/Free-background-clipart-photos-clip-art-backgrounds.jpg)
 }
-@media (max-width: 550px){
-    .container {
-        width: 85%;
-    }
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  .container {
+      width: 25%;
 }
 .container {
     width: 2000px;
@@ -32,7 +35,6 @@ body {
     margin: 5px;
     text-align: center;
     font-size: 30px;
-
 }
 .bucket1, .bucket2 img {
     top: 17px;
@@ -40,7 +42,6 @@ body {
 .topSeperator.active, .bottomSeperator.active {
     pointer-events: none;
 }
-
 .bucket1  {
     background-color: #ffbf80;
     border: 2px solid black;
@@ -171,8 +172,6 @@ h3  {
     position: relative;
     bottom: 72px;
     right: 10px;
-    
-    
 }
 .hidden h3 {
     position: relative;

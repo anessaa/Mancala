@@ -1,7 +1,7 @@
 # MANCALA
 ![alt tag](mancalaWireframe.png)
 
-Mancala is a 2-player turn-based strategy board game played with some type of pebbles or stones and rows of holes. The objective of the game is to capture the most stones when one side of the board is cleared. 
+Mancala is a 2-player turn-based strategy board game played with pebbles or stones and rows of holes. The objective of the game is to capture the most stones when one side of the board is cleared. 
 
 ## Getting Started:
 Play [Manacla](https://anessaa.github.io/Mancala/) 

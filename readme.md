@@ -7,7 +7,7 @@ Visit [Mancala](https://anessaa.github.io/Mancala/)
 
 Visit [Planning Workspace](https://trello.com/b/gkNDa3o1/mancala)
 
-![alt tag](img/mancalaWireframe.png)
+![alt tag](mancala/mancalaWireframe.png)
 
 
 

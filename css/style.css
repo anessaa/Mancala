@@ -9,7 +9,7 @@ body {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
     .container {
-        width: 50%;
+        width: 25%;
 }
 .container {
     width: 2000px;

@@ -4,8 +4,9 @@ body {
     background-image: url(http://clipartix.com/wp-content/uploads/2016/12/Free-background-clipart-photos-clip-art-backgrounds.jpg)
 }
 .container {
-    width: 100%;
-    margin: 0 auto;
+    width: 1500px;
+    height: 1000px;
+    /* margin: 0 auto; */
 }
 .players {
     width: 300px;
@@ -91,7 +92,7 @@ img {
     top: 190px;
     background-color:#cc6600;
     border-radius: 20px;
-    left: 6px;
+    left: 86px;
 }
 h1 {
     text-align: center;
@@ -170,4 +171,10 @@ h3  {
     left: 130px;
     font-size: 25px;
     padding-top: 10px;
+}
+@media (max-width: 550px) and (orientation: landscape) {
+    .container {
+        width: 50%;
+        zoom: 100%        
+    }
 }

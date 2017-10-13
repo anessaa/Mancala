@@ -1,4 +1,12 @@
-MANCALA
+i. MANCALA
+
+ii. Technologies used:
+    
+    HTML/CSS/Javascript/Jquery
+
+iii. https://anessaa.github.io/Mancala/
+
+iv. https://trello.com/b/gkNDa3o1/mancala
 
 Set the board: 
     6 holes on each side
@@ -35,5 +43,6 @@ The player can get a free turn if the last stone is dropped in their bucket.
 The player can capture stones if the last piece dropped in was in an empty hole. the player grabs the stones in the opponents hole.
 
 The game ends when all six spaces on the board are cleared. the player who still has pieces on his side of the board when game ends gets all of those pieces.
+
 
 

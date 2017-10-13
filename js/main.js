@@ -44,6 +44,7 @@ var board;
 var playerOneTurn;
 var freeTurn;
 var resetButtonClicked; 
+
 /*----- cached element references -----*/
 var $holes = $('.hole, .bucket1, .bucket2');
 /*----- event listeners -----*/
@@ -145,7 +146,6 @@ function render() {
         $('.status').html(`${(playerOneTurn ? "Player 1's" : "Player 2's")} Turn`);
     }
 
-
     if (playerOneTurn) {
         $('.topSeperator').addClass('active')
         $('.bottomSeperator').removeClass('active');
@@ -172,11 +172,8 @@ function init() {
     ];
     playerOneTurn = true;
     winner = null;
-    
 }
 
 init();
 render();
 });
-
-

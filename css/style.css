@@ -162,11 +162,7 @@ h3  {
 .hidden ul {
     position: relative;
     bottom: 72px;
-<<<<<<< HEAD
     right: 10px;
-=======
-    right: 10px;   
->>>>>>> 4f84da69c0728c1b32cfd19fdca24a4e10655822
 }
 .hidden h3 {
     position: relative;

@@ -2,15 +2,6 @@
 body {
     font-family: 'Cinzel', serif;
     background-image: url(http://clipartix.com/wp-content/uploads/2016/12/Free-background-clipart-photos-clip-art-backgrounds.jpg)
-<<<<<<< HEAD
-=======
-
-@media (max-width: 550px) and (orientation: landscape) {
-    .container {
-        width: 50%;
-        zoom: 100%        
-    }
->>>>>>> 4f84da69c0728c1b32cfd19fdca24a4e10655822
 }
 .container {
     width: 1500px;
